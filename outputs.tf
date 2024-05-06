@@ -6,16 +6,17 @@ output "kubeconfig" {
   description = "The path to the kubeconfig file"
 }
 
-output "endpoint" {
-  value       = module.gke_auth.endpoint
+output "config_ca" {
+  sensitive   = true
+  value       = module.gke_auth.cluster_ca_certificate
+  description = "Cluster ca certificate (base64 encoded)"
+}
+
+output "host" {
+  value       = module.gke_auth.host
   description = "Cluster endpoint"
 }
 
-output "config_ca" {
-  sensitive   = true
-  value       = module.gke_auth.ca_certificate
-  description = "Cluster ca certificate (base64 encoded)"
-}
 
 output "token" {
   sensitive   = true
