@@ -6,7 +6,7 @@ output "kubeconfig" {
   description = "The path to the kubeconfig file"
 }
 
-output "config_ca" {
+output "cluster_ca_certificate" {
   sensitive   = true
   value       = module.gke_auth.cluster_ca_certificate
   description = "Cluster ca certificate (base64 encoded)"
